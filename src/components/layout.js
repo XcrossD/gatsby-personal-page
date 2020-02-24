@@ -10,8 +10,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
-import { rhythm, scale } from "../utils/typography"
-
 class Layout extends React.Component {
   render() {
     library.add(fab);
