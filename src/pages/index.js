@@ -1,38 +1,56 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
+import styled from "styled-components";
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Button from "../components/button"
+import Layout from "../components/layout";
+import SEO from"../components/seo";
+
+const Hero = styled(Jumbotron)`
+  &&& {
+    background-color: white;
+  }  
+`;
 
 class IndexPage extends React.Component {
   render() {
-    const siteTitle = "Gatsby Starter Personal Website"
-
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout>
         <SEO
           title="Home"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          keywords={[`blog`, `your name`, `javascript`, `react`, `gatsby`]}
         />
-        <img style={{ margin: 0 }} src="./GatsbyScene.svg" alt="Gatsby Scene" />
-        <h1>
-          Hey people{" "}
-          <span role="img" aria-label="wave emoji">
-            👋
-          </span>
-        </h1>
-        <p>Welcome to your new Gatsby website. You are on your home page.</p>
-        <p>
-          This starter comes out of the box with styled components and Gatsby's
-          default starter blog running on Netlify CMS.
-        </p>
-        <p>Now go build something great!</p>
-        <Link to="/blog/">
-          <Button marginTop="35px">Go to Blog</Button>
-        </Link>
+        <Hero className="px-0">
+          <h1>Hi! I'm a person.</h1>
+          <p>
+            I am super duper.
+            <br />
+            I am looking at a personal page & blog example on github.
+          </p>
+          <Link to="/about/">
+            <Button variant="primary">Learn more about me</Button>
+          </Link>
+        </Hero>
+        <Row>
+          <Col>
+            <h2 className="mb-4">Recent work</h2>
+          </Col>
+        </Row>
+        <Row>
+          There will be a React Component which will be shared here when we get to the "work" page
+        </Row>
+        <Row className="mt-4">
+          <Col>
+            <Link to="/work/">
+              <Button variant="primary">View more</Button>
+            </Link>
+          </Col>
+        </Row>
       </Layout>
     )
   }
