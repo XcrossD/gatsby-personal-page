@@ -61,7 +61,7 @@ class Layout extends React.Component {
   render() {
     library.add(fab);
 
-    const { children, title } = this.props;
+    const { children } = this.props;
     return (
       <React.Fragment>
         <Container>
