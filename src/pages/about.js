@@ -27,7 +27,7 @@ class AboutPage extends React.Component {
             <ActionTitle>Email me</ActionTitle>
             <a href="mailto:yourname@somemail.com">yourname@somemail.com</a>
             <ActionTitle>Follow me</ActionTitle>
-            <SocialMedia className="mt-5" />
+            <SocialMedia className="mt-3" />
           </Col>
           <Col>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet sapien ut nulla maximus feugiat eget a ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut sit amet hendrerit ipsum, in egestas nisl. Sed condimentum ultricies tortor, eu viverra quam sagittis ac. Vivamus fringilla sed enim non fermentum. Vivamus sodales erat sed elit vehicula scelerisque. Cras in tellus id lorem hendrerit placerat. Donec mollis sapien ut purus pretium gravida.</p>
