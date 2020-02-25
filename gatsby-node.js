@@ -9,6 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const workProject = path.resolve(`./src/templates/work-project.js`)
   return graphql(
     `
       {
@@ -27,6 +28,15 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allWorkJson {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
       }
     `
   ).then(result => {
@@ -36,6 +46,7 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Create blog posts pages.
     const posts = result.data.allMdx.edges
+    const projects = result.data.allWorkJson.edges
 
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -52,6 +63,16 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
+    projects.forEach((project) => {
+      createPage({
+        path: `work${project.node.fields.slug}`,
+        component: workProject,
+        context: {
+          slug: project.node.fields.slug,
+        },
+      })
+    })
+
     return null
   })
 }
@@ -61,6 +82,16 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+  if (node.internal.type === `WorkJson`) {
+    const value = '/' + node.title.split(` `)
+      .map(elem => elem.toLowerCase())
+      .join(`-`)
     createNodeField({
       name: `slug`,
       node,
