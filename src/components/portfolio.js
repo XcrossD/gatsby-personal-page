@@ -13,20 +13,17 @@ class Portfolio extends React.Component {
       <StaticQuery
         query={portfolioQuery}
         render={data => {
-          const { images } = data;
           const portfolioData = limit ? data.portfolioData.nodes.slice(0, limit) : data.portfolioData.nodes;
-          console.log('data', data);
           return (
             <Row>
               {portfolioData.map(work => {
-                const imageIndex = images.nodes.findIndex(x => x.name === work.image.split('.')[0]);
                 return (
                   <Col className="work" key={work.title}>
                     <Card>
                       <Card.Img 
                         variant="top"
                         as={Img}
-                        fluid={images.nodes[imageIndex].childImageSharp.fluid}
+                        fluid={work.image.childImageSharp.fluid}
                       />
                       <Card.Body>
                         <Card.Title>{work.title}</Card.Title>
@@ -46,19 +43,15 @@ class Portfolio extends React.Component {
 
 const portfolioQuery = graphql`
   query WorkQuery {
-    portfolioData: allWorkJson {
+    portfolioData: allWorkProject {
       nodes {
         description
-        image
         title
-      }
-    }
-    images: allFile {
-      nodes {
-        name
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
       }

@@ -1,6 +1,10 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const work = require('./content/data/work.json');
+
+const IMAGE_PATH = './content/assets/';
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -64,3 +68,48 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
+  work.forEach((project, index) => {
+    const {
+      title,
+      description,
+      image,
+    } = project;
+
+    const { name, ext } = path.parse(image);
+    const absolutePath = path.resolve(__dirname, IMAGE_PATH, image);
+    const imageData = {
+      name,
+      ext,
+      absolutePath,
+      extension: ext.substring(1)
+    };
+    const imageNode = {
+      ...imageData,
+      id: createNodeId(`work-image-${name}-${index}`),
+      internal: {
+        type: 'WorkProjectImage',
+        contentDigest: createContentDigest(imageData),
+      },
+    };
+    actions.createNode(imageNode);
+
+    const idTitle = title.split(' ')
+      .map(elem => elem.toLowerCase())
+      .join('-');
+
+    const node = {
+      title,
+      description,
+      image: imageNode, 
+      id: createNodeId(`work-${idTitle}`),
+      internal: {
+        type: 'WorkProject',
+        contentDigest: createContentDigest(project),
+      },
+    };
+
+    actions.createNode(node);
+  });
+};
