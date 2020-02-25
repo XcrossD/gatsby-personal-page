@@ -55,7 +55,7 @@ class Layout extends React.Component {
                 <EmailLink href="mailto:yourname@somemail.com">yourname@somemail.com</EmailLink>
               </Col>
               <Col md={4} className="d-flex align-items-center justify-content-end">
-                <SocialMedia />
+                <SocialMedia darkBackground={true} />
               </Col>
             </Row>
           </Container>
