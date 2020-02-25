@@ -1,4 +1,5 @@
 import React from "react";
+import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -40,32 +41,49 @@ class socialmedia extends React.Component {
     library.add(fab);
 
     return (
-      <SocialMedia className="social-media">
-        <SocialMediaUl>
-          <SocialMediaLi>
-            <SocialMediaLink href="https://github.com/XcrossD">
-              <FontAwesomeIcon icon={['fab', 'github']} />
-            </SocialMediaLink>
-          </SocialMediaLi>
-          <SocialMediaLi>
-            <SocialMediaLink href="https://www.facebook.com/herbert.lin">
-              <FontAwesomeIcon icon={['fab', 'facebook']} />
-            </SocialMediaLink>
-          </SocialMediaLi>
-          <SocialMediaLi>
-            <SocialMediaLink href="https://www.instagram.com/gummypearin/">
-              <FontAwesomeIcon icon={['fab', 'instagram']} />
-            </SocialMediaLink>
-          </SocialMediaLi>
-          <SocialMediaLi>
-            <SocialMediaLink href="https://www.linkedin.com/in/herbert-lin-28240446/">
-              <FontAwesomeIcon icon={['fab', 'linkedin']} />
-            </SocialMediaLink>
-          </SocialMediaLi>
-        </SocialMediaUl>
-      </SocialMedia>
+      <StaticQuery 
+        query={socialMediaQuery}
+        render={data => {
+          const { social } = data.site.siteMetadata;
+          const { socialUrl } = data;
+          return (
+            <SocialMedia className="social-media">
+              <SocialMediaUl>
+                {Object.keys(social).map(site => (
+                  <SocialMediaLi key={`social-media-${site}`}>
+                    <SocialMediaLink href={`${socialUrl[site]}${social[site]}`}>
+                      <FontAwesomeIcon icon={['fab', site]} size="lg" />
+                    </SocialMediaLink>
+                  </SocialMediaLi>
+                ))}
+              </SocialMediaUl>
+            </SocialMedia>
+          );
+        }}
+      />
     );
   }
 }
+
+const socialMediaQuery = graphql`
+  query SocialMediaQuery {
+    site {
+      siteMetadata {
+        social {
+          facebook
+          github
+          instagram
+          linkedin    
+        }
+      }
+    }
+    socialUrl: dataJson {
+      facebook
+      github
+      instagram
+      linkedin
+    }
+  }
+`
 
 export default socialmedia;
