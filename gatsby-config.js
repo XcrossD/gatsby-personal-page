@@ -6,7 +6,13 @@ module.exports = {
     description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      // add other social media handlers here
+      // don't forget to update src/content/socialurl.json as well
+      twitter: ``,
+      github: `yourgithubid`,
+      facebook: `yourfacebookid`,
+      instagram: `yourinstagramid`,
+      linkedin: `yourlinkedin`
     },
   },
   plugins: [
@@ -17,6 +23,14 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/content/data`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
