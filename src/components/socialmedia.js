@@ -27,7 +27,7 @@ const SocialMediaLi = styled.li`
   padding: 0;
 `;
 
-const SocialMediaLink = styled.a`
+const SocialMediaLinkWhite = styled.a`
   text-decoration: none;
   background-color: transparent;
   color: #f1f1f1;
@@ -36,8 +36,19 @@ const SocialMediaLink = styled.a`
   }
 `;
 
+const SocialMediaLink = styled.a`
+  text-decoration: none;
+  background-color: transparent;
+  color: #171717;
+  &:hover, &:visited, &:active {
+    color: #171717;
+  }
+`;
+
 class socialmedia extends React.Component {
   render() {
+    const { className } = this.props;
+    const darkBackground = this.props.darkBackground | false;
     library.add(fab);
 
     return (
@@ -47,13 +58,19 @@ class socialmedia extends React.Component {
           const { social } = data.site.siteMetadata;
           const { socialUrl } = data;
           return (
-            <SocialMedia className="social-media">
+            <SocialMedia className={`social-media ${className}`}>
               <SocialMediaUl>
                 {Object.keys(social).map(site => (
                   <SocialMediaLi key={`social-media-${site}`}>
-                    <SocialMediaLink href={`${socialUrl[site]}${social[site]}`}>
-                      <FontAwesomeIcon icon={['fab', site]} size="lg" />
-                    </SocialMediaLink>
+                    {darkBackground ? (
+                      <SocialMediaLinkWhite href={`${socialUrl[site]}${social[site]}`}>
+                        <FontAwesomeIcon icon={['fab', site]} size="lg" />
+                      </SocialMediaLinkWhite>
+                    ) : (
+                      <SocialMediaLink href={`${socialUrl[site]}${social[site]}`}>
+                        <FontAwesomeIcon icon={['fab', site]} size="lg" />
+                      </SocialMediaLink>
+                    )}
                   </SocialMediaLi>
                 ))}
               </SocialMediaUl>
