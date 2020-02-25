@@ -6,9 +6,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
+
+import SocialMedia from "./socialmedia";
 
 const FooterWrapper = styled.footer`
   background-color: #171717;
@@ -26,41 +25,8 @@ const EmailLink = styled.a`
   }
 `;
 
-const SocialMedia = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: flex-end;
-  align-content: stretch;
-  text-align: right;
-`;
-
-const SocialMediaUl = styled.ul`
-  list-style: none;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-`;
-
-const SocialMediaLi = styled.li`
-  display: inline-block;
-  margin: 0 18px 0 18px;
-  padding: 0;
-`;
-
-const SocialMediaLink = styled.a`
-  text-decoration: none;
-  background-color: transparent;
-  color: #f1f1f1;
-  &:hover, &:visited, &:active {
-    color: #f1f1f1;
-  }
-`;
-
 class Layout extends React.Component {
   render() {
-    library.add(fab);
-
     const { children } = this.props;
     return (
       <React.Fragment>
@@ -89,30 +55,7 @@ class Layout extends React.Component {
                 <EmailLink href="mailto:yourname@somemail.com">yourname@somemail.com</EmailLink>
               </Col>
               <Col md={4} className="d-flex align-items-center justify-content-end">
-                <SocialMedia className="social-media">
-                  <SocialMediaUl>
-                    <SocialMediaLi>
-                      <SocialMediaLink href="https://github.com/yourgithub">
-                        <FontAwesomeIcon icon={['fab', 'github']} size="lg" />
-                      </SocialMediaLink>
-                    </SocialMediaLi>
-                    <SocialMediaLi>
-                      <SocialMediaLink href="https://www.facebook.com/yourfacebook">
-                        <FontAwesomeIcon icon={['fab', 'facebook']} size="lg" />
-                      </SocialMediaLink>
-                    </SocialMediaLi>
-                    <SocialMediaLi>
-                      <SocialMediaLink href="https://www.instagram.com/yourinstagram/">
-                        <FontAwesomeIcon icon={['fab', 'instagram']} size="lg" />
-                      </SocialMediaLink>
-                    </SocialMediaLi>
-                    <SocialMediaLi>
-                      <SocialMediaLink href="https://www.linkedin.com/in/yourlinkedin/">
-                        <FontAwesomeIcon icon={['fab', 'linkedin']} size="lg" />
-                      </SocialMediaLink>
-                    </SocialMediaLi>
-                  </SocialMediaUl>
-                </SocialMedia>
+                <SocialMedia />
               </Col>
             </Row>
           </Container>
