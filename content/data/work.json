@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Work 1",
+    "description": "Work #1 description here.",
+    "image": "work-pic.png"
+  },
+  {
+    "title": "Work 2",
+    "description": "Work #2 description here.",
+    "image": "work-pic.png"
+  },
+  {
+    "title": "Work 3",
+    "description": "Work #3 description here.",
+    "image": "work-pic.png"
+  }
+]
