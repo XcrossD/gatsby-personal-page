@@ -8,6 +8,11 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import SocialMedia from "../components/socialmedia";
 
+const ActionTitle = styled.h4`
+  margin-top: 18px;
+  padding-bottom: 9px;
+`;
+
 class AboutPage extends React.Component {
   render() {
     return (
@@ -19,7 +24,9 @@ class AboutPage extends React.Component {
         <Row>
           <Col className="profile">
             <h1>I'm Your Name, nice to meet you.</h1>
+            <ActionTitle>Email me</ActionTitle>
             <a href="mailto:yourname@somemail.com">yourname@somemail.com</a>
+            <ActionTitle>Follow me</ActionTitle>
             <SocialMedia className="mt-5" />
           </Col>
           <Col>
