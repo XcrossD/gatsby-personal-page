@@ -9,7 +9,8 @@ import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Layout from "../components/layout";
-import SEO from"../components/seo";
+import SEO from "../components/seo";
+import Portfolio from "../components/portfolio";
 
 const Hero = styled(Jumbotron)`
   &&& {
@@ -41,9 +42,7 @@ class IndexPage extends React.Component {
             <h2 className="mb-4">Recent work</h2>
           </Col>
         </Row>
-        <Row>
-          There will be a React Component which will be shared here when we get to the "work" page
-        </Row>
+        <Portfolio limit={6} />
         <Row className="mt-4">
           <Col>
             <Link to="/work/">
