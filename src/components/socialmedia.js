@@ -2,8 +2,6 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
 
 const SocialMedia = styled.div`
   display: flex;
@@ -49,7 +47,6 @@ class socialmedia extends React.Component {
   render() {
     const { className } = this.props;
     const darkBackground = this.props.darkBackground | false;
-    library.add(fab);
 
     return (
       <StaticQuery 

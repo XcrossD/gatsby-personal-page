@@ -5,12 +5,21 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faLink, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Portfolio from "../components/portfolio";
+
+library.add(
+  fab,
+  faLink,
+  faLayerGroup
+);
 
 const Hero = styled(Jumbotron)`
   &&& {
