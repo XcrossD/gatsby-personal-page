@@ -24,10 +24,16 @@ export default WorkProjectTemplate
 
 export const pageQuery = graphql`
   query WorkProjectBySlug($slug: String!) {
-    workJson(fields: { slug: { eq: $slug } }) {
-      title
+    workProject(fields: { slug: { eq: $slug } }) {
       description
-      image
+      title
+      image {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   }
 `
