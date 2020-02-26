@@ -106,6 +106,9 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title,
       description,
       image,
+      technology,
+      url,
+      body,
     } = project;
 
     const { name, ext } = path.parse(image);
@@ -134,6 +137,9 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title,
       description,
       image: imageNode,
+      technology,
+      url,
+      body,
       id: createNodeId(`work-${idTitle}`),
       internal: {
         type: 'WorkProject',

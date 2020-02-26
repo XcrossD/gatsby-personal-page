@@ -2,16 +2,25 @@
   {
     "title": "Work 1",
     "description": "Work #1 description here.",
-    "image": "work-pic.png"
+    "image": "work-pic.png",
+    "technology": ["React", "Gatsby", "GraphQL"],
+    "url": "https://placeholder.com/",
+    "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur elit vel consectetur lacinia. Nulla eget lectus volutpat, porttitor justo sit amet, viverra lorem. Curabitur facilisis, arcu eget iaculis rutrum, massa sem vulputate nulla, sit amet dignissim nisi leo vel libero. Etiam quis dapibus magna. Mauris non sapien tincidunt, blandit erat vitae, gravida sapien. Integer id turpis non diam ornare vestibulum. Duis scelerisque et quam id aliquet. Integer pharetra lacus eget orci euismod eleifend.</p><p>In hac habitasse platea dictumst. Praesent venenatis nisl in arcu laoreet faucibus. Mauris sed tincidunt ligula, ac fringilla ante. Morbi porta varius nibh, at consectetur odio accumsan vel. In scelerisque feugiat neque sit amet molestie. Nulla facilisi. Curabitur dignissim justo vel pellentesque sodales. Suspendisse et interdum est.</p>"
   },
   {
     "title": "Work 2",
     "description": "Work #2 description here.",
-    "image": "work-pic.png"
+    "image": "work-pic.png",
+    "technology": ["React", "Gatsby", "GraphQL"],
+    "url": "https://placeholder.com/",
+    "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur elit vel consectetur lacinia. Nulla eget lectus volutpat, porttitor justo sit amet, viverra lorem. Curabitur facilisis, arcu eget iaculis rutrum, massa sem vulputate nulla, sit amet dignissim nisi leo vel libero. Etiam quis dapibus magna. Mauris non sapien tincidunt, blandit erat vitae, gravida sapien. Integer id turpis non diam ornare vestibulum. Duis scelerisque et quam id aliquet. Integer pharetra lacus eget orci euismod eleifend.</p><p>In hac habitasse platea dictumst. Praesent venenatis nisl in arcu laoreet faucibus. Mauris sed tincidunt ligula, ac fringilla ante. Morbi porta varius nibh, at consectetur odio accumsan vel. In scelerisque feugiat neque sit amet molestie. Nulla facilisi. Curabitur dignissim justo vel pellentesque sodales. Suspendisse et interdum est.</p>"
   },
   {
     "title": "Work 3",
     "description": "Work #3 description here.",
-    "image": "work-pic.png"
+    "image": "work-pic.png",
+    "technology": ["React", "Gatsby", "GraphQL"],
+    "url": "https://placeholder.com/",
+    "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur elit vel consectetur lacinia. Nulla eget lectus volutpat, porttitor justo sit amet, viverra lorem. Curabitur facilisis, arcu eget iaculis rutrum, massa sem vulputate nulla, sit amet dignissim nisi leo vel libero. Etiam quis dapibus magna. Mauris non sapien tincidunt, blandit erat vitae, gravida sapien. Integer id turpis non diam ornare vestibulum. Duis scelerisque et quam id aliquet. Integer pharetra lacus eget orci euismod eleifend.</p><p>In hac habitasse platea dictumst. Praesent venenatis nisl in arcu laoreet faucibus. Mauris sed tincidunt ligula, ac fringilla ante. Morbi porta varius nibh, at consectetur odio accumsan vel. In scelerisque feugiat neque sit amet molestie. Nulla facilisi. Curabitur dignissim justo vel pellentesque sodales. Suspendisse et interdum est.</p>"
   }
 ]
