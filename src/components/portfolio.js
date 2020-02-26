@@ -1,5 +1,5 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql, Link } from "gatsby";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
@@ -26,7 +26,11 @@ class Portfolio extends React.Component {
                         fluid={work.image.childImageSharp.fluid}
                       />
                       <Card.Body>
-                        <Card.Title>{work.title}</Card.Title>
+                        <Card.Title>
+                          <Link to={`work${work.fields.slug}`}>
+                            {work.title}
+                          </Link>
+                        </Card.Title>
                         <Card.Text>{work.description}</Card.Text>
                       </Card.Body>
                     </Card>
@@ -47,6 +51,9 @@ const portfolioQuery = graphql`
       nodes {
         description
         title
+        fields {
+          slug
+        }
         image {
           childImageSharp {
             fluid {
