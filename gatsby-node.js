@@ -28,7 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-        allWorkJson {
+        allWorkProject {
           edges {
             node {
               fields {
@@ -88,7 +88,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
   }
-  if (node.internal.type === `WorkJson`) {
+  if (node.internal.type === `WorkProject`) {
     const value = '/' + node.title.split(` `)
       .map(elem => elem.toLowerCase())
       .join(`-`)
@@ -133,7 +133,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
     const node = {
       title,
       description,
-      image: imageNode, 
+      image: imageNode,
       id: createNodeId(`work-${idTitle}`),
       internal: {
         type: 'WorkProject',
