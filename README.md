@@ -1,4 +1,26 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+<h1 align="center">
+  Personal page and blog built with Gatsby, modified with Bootstrap styles
+</h1>
+
+<img alt="screesnhot" src="./screenshot.png">
+
+This repo is a fork of [Gatsby's personal blog starter](https://github.com/thomaswang/gatsby-personal-starter-blog). The content of the original README is included below installation instructions. You can see this site in action here: [demo](https://cocky-turing-f83a29.netlify.com/).
+
+## 🏭 Installation
+
+This site can also be created with Gatsby CLI, see `Quick start` for further instructions.
+```sh
+gatsby new my-blog-starter https://github.com/XcrossD/gatsby-personal-page
+```
+Alternatively, install by yourself.
+```sh
+git clone https://github.com/XcrossD/gatsby-personal-page.git
+npm install
+```
+
+---
+
 <p align="center">
   <a href="https://www.gatsbyjs.org">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
@@ -8,7 +30,7 @@
   Gatsby's personal blog starter
 </h1>
 
-<img alt="screesnhot" src="./screenshot.png">
+<img alt="screesnhot" src="./originalscreenshot.png">
 
 This starter is a fork of Gatsby Starter Blog, the most popular starter by far – with second place being Gatsby Starter Netlify CMS. So I decided to combine the 2!
 
@@ -54,6 +76,6 @@ Start from [this point](https://www.gatsbyjs.org/docs/sourcing-from-netlify-cms/
 
 ## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thomaswangio/gatsby-personal-starter-blog)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/XcrossD/gatsby-personal-page)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
